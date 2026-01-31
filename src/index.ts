@@ -1,3 +1,4 @@
+// Union Types ( | means OR )
 // 1
 type IDType = number | string;
 
@@ -28,3 +29,55 @@ const printResult = (result: Result): void => {
 
 printResult(true);
 printResult(false);
+
+// Interfaces and Type Aliases ( & means AND )
+
+// 4
+interface Book {
+  title: string;
+  pages: number;
+}
+
+const describeBook = (book: Book): void => {
+  console.log(`The book ${book.title} has ${book.pages} pages.`);
+};
+
+describeBook({ title: "50 Shades", pages: 145 });
+
+// 5
+interface Teacher {
+  name: string;
+  subject: string;
+}
+
+interface Employee {
+  id: number;
+  email: string;
+}
+
+type SchoolTeacher = Teacher & Employee;
+
+const printTeacherInfo = (teacher: SchoolTeacher): void => {
+  console.log(
+    `ID: ${teacher.id} Name: ${teacher.name} email: ${teacher.email} subject: ${teacher.subject}`,
+  );
+};
+
+printTeacherInfo({
+  id: 20,
+  name: "Ernest",
+  email: "ernest@example.com",
+  subject: "Geography",
+});
+
+// 6
+interface Car {
+  brand: string;
+  year: number;
+}
+
+const printCar = (car: Car): void => {
+  console.log(`Brand: ${car.brand} Year: ${car.year}`);
+};
+
+printCar({ brand: "Toyota Camry", year: 2018 });
