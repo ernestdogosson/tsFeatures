@@ -81,3 +81,61 @@ const printCar = (car: Car): void => {
 };
 
 printCar({ brand: "Toyota Camry", year: 2018 });
+
+// Enums (fixed list of options)
+// 7
+enum Color {
+  Red,
+  Blue,
+  Green,
+}
+
+const showColor = (color: Color): void => {
+  if (color === Color.Red) {
+    console.log("You chose red");
+  } else if (color === Color.Blue) {
+    console.log("You chose blue");
+  } else if (color === Color.Green) {
+    console.log("You chose green");
+  }
+};
+
+showColor(Color.Blue);
+
+// 8
+enum PizzaSize {
+  Small = "small",
+  Medium = "medium",
+  Large = "large",
+}
+
+const orderPizza = (order: PizzaSize): void => {
+  if (order === PizzaSize.Small) {
+    console.log(`Your ordered a ${PizzaSize.Small} pizza.`);
+  } else if (order === PizzaSize.Medium) {
+    console.log(`Your ordered a ${PizzaSize.Medium} pizza.`);
+  } else if (order === PizzaSize.Large) {
+    console.log(`Your ordered a ${PizzaSize.Large} pizza.`);
+  }
+};
+
+orderPizza(PizzaSize.Large);
+
+// 9
+enum Role {
+  Admin,
+  User,
+  Guest,
+}
+
+const printRole = (role: Role) => {
+  if (role === Role.Admin) {
+    console.log("You have full access.");
+  } else if (role === Role.User) {
+    console.log("You have limited access.");
+  } else if (role === Role.Guest) {
+    console.log("You have guess access.");
+  }
+};
+
+printRole(Role.Admin);
