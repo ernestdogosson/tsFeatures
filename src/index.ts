@@ -128,7 +128,7 @@ enum Role {
   Guest,
 }
 
-const printRole = (role: Role) => {
+const printRole = (role: Role): void => {
   if (role === Role.Admin) {
     console.log("You have full access.");
   } else if (role === Role.User) {
@@ -139,3 +139,26 @@ const printRole = (role: Role) => {
 };
 
 printRole(Role.Admin);
+
+// Generics ( <T> means reusable placeholder )
+// 10
+const wrapInArray = <T>(item: T): T[] => {
+  return [item];
+};
+
+console.log(wrapInArray("cat"));
+
+// 11
+const firstItem = <T>(array: T[]): T | undefined => {
+  return array[0];
+};
+
+console.log(firstItem([1, 2, 3]));
+console.log(firstItem(["a", "b", "c"]));
+
+// 12
+const swap = <T>(item1: T, item2: T): T[] => {
+  return [item2, item1];
+};
+
+console.log(swap("hello", "world"));
